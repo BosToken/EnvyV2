@@ -21,7 +21,6 @@ class UserSeeder extends Seeder
             'password' => 'diandra11',
             'phone' => '081232857502',
             'role' => '1',
-            'address_id' => 1,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -32,7 +31,6 @@ class UserSeeder extends Seeder
             'password' => 'user',
             'phone' => '081232857501',
             'role' => '2',
-            'address_id' => 2,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);

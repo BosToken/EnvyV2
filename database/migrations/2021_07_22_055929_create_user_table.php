@@ -21,8 +21,6 @@ class CreateUserTable extends Migration
             $table->string('phone')->nullable();
             $table->integer('role');
 
-            $table->integer('address_id')->nullable();
-
             $table->timestamps();
         });
     }

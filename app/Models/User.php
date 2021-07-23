@@ -14,13 +14,10 @@ class User extends Model
         'password',
         'phone',
         'role',
-        'address_id',
-        // 'cart_id',
-        // 'setting_id',
     ];
 
-    public function address () {
-        return $this->belongsTo('App\Models\Address', 'address_id');
+    public function addresss () {
+        return $this->hasMany('App\Models\Address');
     }
 
 }

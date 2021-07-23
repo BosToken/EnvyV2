@@ -75,8 +75,6 @@ class UserController extends Controller
 
             $user->save();
 
-            $user->address();
-
             $request->session()->put('logged_in', true);
             $data = User::where('email', $request->email);
             $request->session()->put('user', $data->first());
@@ -88,8 +86,31 @@ class UserController extends Controller
     public function profile()
     {
         $user = Session::get('user');
-        $user->load('address');
+        $address = User::find($user->id)->addresss()->get();
+        // $user->load('address');
         // return $user;
-        return view('User.profile', compact('user'));
+        // return $address;
+        return view('User.profile', compact('user', 'address'));
     }
+
+    public function profileUsername(Request $request, $id)
+    {
+        User::where('id', $id)->update([
+            'username' => $request->username
+        ]);
+        $data = User::where('id', $id)->first();
+        $request->session()->put('user', $data);
+        return redirect()->action([UserController::class, 'profile']);
+    }
+
+    public function profilePhone(Request $request, $id)
+    {
+        User::where('id', $id)->update([
+            'phone' => $request->phone
+        ]);
+        $data = User::where('id', $id)->first();
+        $request->session()->put('user', $data);
+        return redirect()->action([UserController::class, 'profile']);
+    }
+
 }

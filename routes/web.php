@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddressController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +27,10 @@ Route::get('register',[UserController::class, 'register']);
 Route::put('register/store',[UserController::class, 'store']);
 
 Route::get('profile',[UserController::class, 'profile']);
+Route::put('profile/username/update/{id}',[UserController::class, 'profileUsername']);
+Route::put('profile/phone/update/{id}',[UserController::class, 'profilePhone']);
+Route::put('profile/address/store/{id}',[AddressController::class, 'store']);
+Route::put('profile/address/update/{id}',[AddressController::class, 'update']);
+Route::get('profile/address/destroy/{id}',[AddressController::class, 'destroy']);
+
+Route::get('admin/dashboard', [AdminController::class, 'dashboard']);
