@@ -103,7 +103,7 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
                                 <a class="nav-link active" aria-current="page" href="{{ url('Cart') }}">
                                     Cart
                                     <i class="fas fa-cart-plus"></i>
-                                    <span class="badge bg-secondary">0</span>
+                                    <span class="badge bg-danger">0</span>
                                 </a>
                             </li>
                         </ul>

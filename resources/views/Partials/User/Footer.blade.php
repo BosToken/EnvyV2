@@ -14,6 +14,8 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
         width: 100%;
         background-color: white;
         text-align: center;
+        property: bottom,
+        /* values: $position-values */
     }
 
 </style>

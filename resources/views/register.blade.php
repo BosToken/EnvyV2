@@ -3,6 +3,15 @@
 
 <title>Register</title>
 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
+    .container {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+</style>
+
 @section('content')
 
     <div class="container">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Session;
 use App\Models\User;
 use App\Models\Address;
+use App\Models\Product;
 
 use Illuminate\Http\Request;
 
@@ -18,8 +19,9 @@ class UserController extends Controller
 
     public function product()
     {
+        $product = Product::where('archive', 1)->get();
         $user = Session::get('user');
-        return view('product', compact('user'));
+        return view('product', compact('user', 'product'));
     }
 
     public function login()

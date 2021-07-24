@@ -2,9 +2,13 @@
 {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/css/sidebar.js') }}"> --}}
 
 <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{{-- Font --}}
+<script src="https://kit.fontawesome.com/a47e0565cc.js" crossorigin="anonymous"></script>
 
 <script>
     jQuery(function($) {
@@ -96,31 +100,50 @@
                             <li class="sidebar">
                                 <a href="{{ url('admin/dashboard') }}">
                                     {{-- <i class="fa fa-tachometer-alt"></i> --}}
+                                    <i class="fas fa-clipboard-list"></i>
                                     <span>Dashboard</span>
                                 </a>
                             </li>
                             <li class="sidebar">
-                                <a href="#">
+                                <a href="{{url('/admin/addProduct')}}">
                                     {{-- <i class="fa fa-shopping-cart"></i> --}}
-                                    <span>E-commerce</span>
+                                    <i class="fas fa-folder-plus"></i>
+                                    <span>Add Product</span>
                                 </a>
                             </li>
                             <li class="sidebar">
                                 <a href="#">
                                     {{-- <i class="far fa-gem"></i> --}}
-                                    <span>Components</span>
+                                    <i class="fas fa-check"></i>
+                                    <span>Active Product</span>
                                 </a>
                             </li>
                             <li class="sidebar">
                                 <a href="#">
                                     {{-- <i class="fa fa-chart-line"></i> --}}
-                                    <span>Charts</span>
+                                    <i class="fas fa-times"></i>
+                                    <span>Closed Product</span>
                                 </a>
                             </li>
                             <li class="sidebar">
                                 <a href="#">
                                     {{-- <i class="fa fa-globe"></i> --}}
-                                    <span>Maps</span>
+                                    <i class="fas fa-file-archive"></i>
+                                    <span>Archive Product</span>
+                                </a>
+                            </li>
+                            <li class="sidebar">
+                                <a href="#">
+                                    {{-- <i class="fa fa-globe"></i> --}}
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>Transaction</span>
+                                </a>
+                            </li>
+                            <li class="sidebar">
+                                <a href="#">
+                                    {{-- <i class="fa fa-globe"></i> --}}
+                                    <i class="fas fa-history"></i>
+                                    <span>History Transaction</span>
                                 </a>
                             </li>
                             <br>

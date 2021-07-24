@@ -1,7 +1,16 @@
 @extends('Partials/User/Navbar')
-@extends('Partials/User/Footer')
+{{-- @extends('Partials/User/Footer') --}}
 
 <title>Product</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
+    .container {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+</style>
 
 @section('content')
 
@@ -32,25 +41,27 @@
         </div>
 
         <div class="row mb-4">
-            <div class="col-md-3 mt-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('products/bajutidur.jpg') }}" />
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h5>Baju Tidur</h5>
-                            <p>Price : <strong> RP. 105.000 </strong></p>
-                            <a href="{{ url('product/detail') }}" class="btn btn-success">
-                                <i class="fas fa-cart-plus"></i>
-                                Buy
-                            </a>
-                            <a href="{{ url('product/add') }}" class="btn btn-primary">
-                                <i class="fas fa-plus"></i>
-                                Add
-                            </a>
+            @foreach ($product as $products)
+                <div class="col-md-3 mt-4">
+                    <div class="card shadow">
+                        <img class="card-img-top" src="{{ asset('products/' . $products->image_product) }}" />
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h5>{{ $products->name_product }}</h5>
+                                <p>Price : <strong> RP. {{ $products->price_product }} </strong></p>
+                                <a href="{{ url('product/detail') }}" class="btn btn-success">
+                                    <i class="fas fa-cart-plus"></i>
+                                    Buy
+                                </a>
+                                <a href="{{ url('product/add') }}" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i>
+                                    Add
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
