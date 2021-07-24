@@ -37,3 +37,5 @@ Route::get('profile/address/destroy/{id}',[AddressController::class, 'destroy'])
 Route::get('admin/dashboard', [AdminController::class, 'dashboard']);
 Route::get('admin/addProduct', [ProductController::class, 'index']);
 Route::put('admin/addProduct/store', [ProductController::class, 'store']);
+Route::get('admin/addProduct/destroy/{id}',[ProductController::class, 'destroy']);
+

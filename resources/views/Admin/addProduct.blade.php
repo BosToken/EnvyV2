@@ -43,7 +43,7 @@
                                     <i class="fas fa-pen"></i>
                                 </a>
 
-                                <a href="{{ url('product/detail') }}" class="btn btn-danger">
+                                <a href="{{ url('admin/addProduct/destroy', [$products->id]) }}" class="btn btn-danger">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>

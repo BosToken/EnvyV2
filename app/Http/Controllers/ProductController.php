@@ -38,4 +38,10 @@ class ProductController extends Controller
         // return $data;
         return redirect()->action([ProductController::class, 'index']);
     }
+
+    public function destroy($id)
+    {
+        Product::where('id', $id)->delete();
+        return redirect()->action([ProductController::class, 'index']);
+    }
 }
