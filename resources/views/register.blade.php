@@ -1,5 +1,4 @@
 @extends('Partials.User.Navbar')
-@extends('Partials.User.Footer')
 
 <title>Register</title>
 

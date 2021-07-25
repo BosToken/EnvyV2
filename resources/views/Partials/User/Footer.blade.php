@@ -6,7 +6,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<style>
+{{-- <style>
     .footer {
         position: fixed;
         left: 0;
@@ -18,12 +18,51 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
         /* values: $position-values */
     }
 
-</style>
+</style> --}}
 
-<footer>
+{{-- <footer>
 <div class="footer">
     <hr>
     <p>© 2021 Copyright App Title</p>
 </div>
-</footer>
+</footer> --}}
 
+@section('footer')
+
+    <hr>
+    <footer class="footer page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    SHOP BY COLLECTION
+                </div>
+                <div class="col s6">
+                    Information
+                </div>
+                <div class="col s6">
+                    Help
+                </div>
+                <div class="col s6">
+                    Contact
+                    <ul>
+                        <a href="https://www.instagram.com/puckxou" target="_blank">
+                            <img src="{{ asset('assets/ig.png') }}" width="25" height="25">
+                        </a>
+                        <br>
+                        <a href="https://wa.me/6281232857502/?text=Saya%20tertarik%20dengan%20web%20ini" target="_blank">
+                            <img src="{{ asset('assets/whats.png') }}" width="25" height="25">
+                        </a>
+                        <br>
+                        <a href="https://github.com/BosToken" target="_blank">
+                            <img src="{{ asset('assets/git.png') }}" width="22" height="22">
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <center>&copy; 2021 Copyright App title</center>
+                </div>
+            </div>
+        </div>
+    </footer>

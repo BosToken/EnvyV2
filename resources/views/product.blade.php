@@ -1,5 +1,4 @@
 @extends('Partials/User/Navbar')
-{{-- @extends('Partials/User/Footer') --}}
 
 <title>Product</title>
 
@@ -70,5 +69,5 @@
             @endforeach
         </div>
     </div>
-
 @endsection
+

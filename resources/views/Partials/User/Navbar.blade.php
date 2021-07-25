@@ -16,6 +16,8 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
 
 </style>
 
+@extends('Partials/User/Footer')
+
 @section('navbar')
 
     <head>
@@ -115,3 +117,6 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
     </head>
 
     @yield('content')
+
+    @section('footer')
+    @endsection
