@@ -42,6 +42,9 @@
 
         <div class="row mb-4">
             @foreach ($product as $products)
+            @if($products->archive === 1)
+              @if($products->quantity_product === 0)
+              @else
                 <div class="col-md-3 mt-4">
                     <div class="card shadow">
                         <img class="card-img-top" src="{{ asset('products/' . $products->image_product) }}" />
@@ -61,6 +64,9 @@
                         </div>
                     </div>
                 </div>
+                @endif
+              @else
+              @endif
             @endforeach
         </div>
     </div>

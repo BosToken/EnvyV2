@@ -93,11 +93,19 @@
                             </div>
                             <div class="mb-3">
                                 <label for="gender_id">Gender</label>
-                                <input type="number" class="form-control" id="gender_id" for="gender_id" name="gender_id" required>
+                                <select class="form-select" aria-label="Default select example" id="gender_id" for="gender_id" name="gender_id">
+                                    @foreach ($gender as $genders)
+                                    <option value={{$genders->id}}>{{$genders->name_gender}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="type_id">Type</label>
-                                <input type="number" class="form-control" id="type_id" for="type_id" name="type_id" required>
+                                <select class="form-select" aria-label="Default select example" id="type_id" for="type_id" name="type_id">
+                                    @foreach ($type as $types)
+                                    <option value={{$types->id}}>{{$types->name_type}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="size">Size</label>

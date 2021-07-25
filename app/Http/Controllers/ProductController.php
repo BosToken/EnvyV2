@@ -6,6 +6,8 @@ use Session;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Product;
+use App\Models\Gender;
+use App\Models\Type;
 
 use Illuminate\Http\Request;
 
@@ -13,9 +15,11 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $product = Product::get();
         $user = Session::get('user');
-        return view('Admin.addProduct', compact('user', 'product'));
+        $product = Product::get();
+        $gender = Gender::get();
+        $type = Type::get();
+        return view('Admin.addProduct', compact('user', 'product', 'gender', 'type'));
     }
     public function store(Request $request)
     {
@@ -80,4 +84,44 @@ class ProductController extends Controller
         Product::where('id', $id)->delete();
         return redirect()->action([ProductController::class, 'index']);
     }
+
+    public function activeProduct()
+    {
+        $product = Product::get();
+        $user = Session::get('user');
+        return view('Admin.activeProduct', compact('user', 'product'));
+    }
+
+    public function closedProduct()
+    {
+        $product = Product::get();
+        $user = Session::get('user');
+        return view('Admin.closedProduct', compact('user', 'product'));
+    }
+
+    public function closedUpdate(Request $request, $id)
+    {
+        Product::where('id', $id)->update([
+            'quantity_product' => $request->quantity_product
+        ]);
+
+        return redirect()->action([ProductController::class, 'closedProduct']);
+    }
+
+    public function archiveProduct()
+    {
+        $product = Product::get();
+        $user = Session::get('user');
+        return view('Admin.archiveProduct', compact('user', 'product'));
+    }
+
+    public function archiveUpdate(Request $request, $id)
+    {
+        Product::where('id', $id)->update([
+            'archive' => $request->archive
+        ]);
+
+        return redirect()->action([ProductController::class, 'archiveProduct']);
+    }
+    
 }

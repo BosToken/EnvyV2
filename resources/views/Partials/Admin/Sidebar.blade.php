@@ -105,28 +105,28 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
                                 </a>
                             </li>
                             <li class="sidebar">
-                                <a href="{{url('/admin/addProduct')}}">
+                                <a href="{{url('admin/addProduct')}}">
                                     {{-- <i class="fa fa-shopping-cart"></i> --}}
                                     <i class="fas fa-folder-plus"></i>
                                     <span>Add Product</span>
                                 </a>
                             </li>
                             <li class="sidebar">
-                                <a href="#">
+                                <a href="{{url('admin/activeProduct')}}">
                                     {{-- <i class="far fa-gem"></i> --}}
                                     <i class="fas fa-check"></i>
                                     <span>Active Product</span>
                                 </a>
                             </li>
                             <li class="sidebar">
-                                <a href="#">
+                                <a href="{{url('admin/closedProduct')}}">
                                     {{-- <i class="fa fa-chart-line"></i> --}}
                                     <i class="fas fa-times"></i>
                                     <span>Closed Product</span>
                                 </a>
                             </li>
                             <li class="sidebar">
-                                <a href="#">
+                                <a href="{{url('admin/archiveProduct')}}">
                                     {{-- <i class="fa fa-globe"></i> --}}
                                     <i class="fas fa-file-archive"></i>
                                     <span>Archive Product</span>

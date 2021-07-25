@@ -39,3 +39,10 @@ Route::get('admin/addProduct', [ProductController::class, 'index']);
 Route::post('admin/addProduct/store', [ProductController::class, 'store']);
 Route::get('admin/addProduct/destroy/{id}',[ProductController::class, 'destroy']);
 
+Route::get('admin/activeProduct', [ProductController::class, 'activeProduct']);
+
+Route::get('admin/closedProduct', [ProductController::class, 'closedProduct']);
+Route::put('admin/closedProduct/update/{id}', [ProductController::class, 'closedUpdate']);
+
+Route::get('admin/archiveProduct', [ProductController::class, 'archiveProduct']);
+Route::put('admin/archiveProduct/update/{id}', [ProductController::class, 'archiveUpdate']);

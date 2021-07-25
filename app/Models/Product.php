@@ -20,4 +20,12 @@ class Product extends Model
         'color',
         'archive',
     ];
+
+    public function genders () {
+        return $this->belongsTo('App\Model\Gender', 'gender_id');
+    }
+
+    public function types () {
+        return $this->belongsTo('App\Model\Type', 'type_id');
+    }
 }
