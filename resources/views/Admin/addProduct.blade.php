@@ -55,9 +55,8 @@
 
         <!-- Add Address Modal -->
         <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <form action="{{ url('admin/addProduct/store') }}" method="POST">
+            <form action="{{ url('admin/addProduct/store') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                @method('PUT')
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
