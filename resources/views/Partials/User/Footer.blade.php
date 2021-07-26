@@ -34,17 +34,36 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
         <div class="container">
             <div class="row">
                 <div class="col s6">
-                    SHOP BY COLLECTION
-                </div>
-                <div class="col s6">
-                    Information
-                </div>
-                <div class="col s6">
-                    Help
-                </div>
-                <div class="col s6">
-                    Contact
                     <ul>
+                        SHOP BY COLLECTION
+                        <li><a href="" class="link-dark">Stripped Outfits</a></li>
+                        <li><a href="" class="link-dark">Jacket & Hoodie</a></li>
+                    </ul>
+                </div>
+                <div class="col s6">
+                    <ul>
+                        Information
+                        <li><a href="" class="link-dark">User Rules</a></li>
+                        <li><a href="" class="link-dark">Privacy Policy</a></li>
+                        <li><a href="" class="link-dark">Copyright Policy</a></li>
+                        <li><a href="" class="link-dark">Terms & Conditions Applicable</a></li>
+                        <li><a href="" class="link-dark">Store Location</a></li>
+                    </ul>
+                </div>
+                <div class="col s6">
+                    <ul>
+                        Help
+                        <li><a href="" class="link-dark">How to Shop</a></li>
+                        <li><a href="" class="link-dark">Size Guide</a></li>
+                        <li><a href="" class="link-dark">FAQ</a></li>
+                        <li><a href="" class="link-dark">Shipping Terms & Checks</a></li>
+                        <li><a href="" class="link-dark">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="col s6">
+                    <ul>
+                        Contact
+                        <br>
                         <a href="https://www.instagram.com/puckxou" target="_blank">
                             <img src="{{ asset('assets/ig.png') }}" width="25" height="25">
                         </a>

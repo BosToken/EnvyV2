@@ -41,9 +41,26 @@
                 </div>
             </div>
 
+            <hr>
             <div class="row mb-3">
-                <div class="col">
-                    
+                <h2>
+                    <center>Product</center>
+                </h2>
+                <div class="col-md-3 mt-3">
+                    <a href=""><img src="{{ asset('models/Men.jpg') }}" width="270"></a>
+                    <p><h4>Men</h4></p>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <a href=""><img src="{{ asset('models/Woman.jpg') }}" width="270"></a>
+                    <p><h4>Woman</h4></p>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <a href=""><img src="{{ asset('models/Kids.jpg') }}" width="270"></a>
+                    <p><h4>Kids</h4></p>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <a href=""><img src="{{ asset('models/Bag.jpg') }}" width="270"></a>
+                    <p><h4>Bags</h4></p>
                 </div>
             </div>
 
