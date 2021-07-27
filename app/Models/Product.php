@@ -22,10 +22,14 @@ class Product extends Model
     ];
 
     public function genders () {
-        return $this->belongsTo('App\Model\Gender', 'gender_id');
+        return $this->belongsTo('App\Models\Gender', 'gender_id');
     }
 
     public function types () {
-        return $this->belongsTo('App\Model\Type', 'type_id');
+        return $this->belongsTo('App\Models\Type', 'type_id');
+    }
+
+    public function carts () {
+        return $this->hasMany('App\Models\Cart');
     }
 }

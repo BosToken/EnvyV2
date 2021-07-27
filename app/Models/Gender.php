@@ -13,6 +13,6 @@ class Gender extends Model
     ];
 
     public function products () {
-        return $this->hasMany('App\Model\Product' ,'product_id');
+        return $this->hasMany('App\Models\Product' ,'product_id');
     }
 }

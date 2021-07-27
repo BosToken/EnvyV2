@@ -20,4 +20,8 @@ class User extends Model
         return $this->hasMany('App\Models\Address');
     }
 
+    public function carts () {
+        return $this->hasMany('App\Models\Cart');
+    }
+
 }

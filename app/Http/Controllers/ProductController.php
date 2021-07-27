@@ -60,7 +60,7 @@ class ProductController extends Controller
         $image = $request->file('image_product');
         $move = "products";
 
-        $data = Product::create([
+        Product::create([
             'name_product' => $request->name_product,
             'description_product' => $request->description_product,
             'image_product' => $image->getClientOriginalName(),
@@ -123,5 +123,4 @@ class ProductController extends Controller
 
         return redirect()->action([ProductController::class, 'archiveProduct']);
     }
-    
 }

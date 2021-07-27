@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,10 @@ Route::put('profile/phone/update/{id}',[UserController::class, 'profilePhone']);
 Route::put('profile/address/store/{id}',[AddressController::class, 'store']);
 Route::put('profile/address/update/{id}',[AddressController::class, 'update']);
 Route::get('profile/address/destroy/{id}',[AddressController::class, 'destroy']);
+
+Route::get('cart',[CartController::class, 'index']);
+Route::get('cart/store/{id}',[CartController::class, 'store']);
+Route::get('cart/destroy/{id}',[CartController::class, 'destroy']);
 
 Route::get('admin/dashboard', [AdminController::class, 'dashboard']);
 Route::get('admin/addProduct', [ProductController::class, 'index']);

@@ -64,15 +64,13 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
                     <ul>
                         Contact
                         <br>
-                        <a href="https://www.instagram.com/puckxou" target="_blank">
+                        <a href="https://www.instagram.com/puckxou" class="link-light" target="_blank">
                             <img src="{{ asset('assets/ig.png') }}" width="25" height="25">
                         </a>
-                        <br>
-                        <a href="https://wa.me/6281232857502/?text=Saya%20tertarik%20dengan%20web%20ini" target="_blank">
+                        <a href="https://wa.me/6281232857502/?text=Saya%20tertarik%20dengan%20web%20ini" class="link-light" target="_blank">
                             <img src="{{ asset('assets/whats.png') }}" width="25" height="25">
                         </a>
-                        <br>
-                        <a href="https://github.com/BosToken" target="_blank">
+                        <a href="https://github.com/BosToken" class="link-light" target="_blank">
                             <img src="{{ asset('assets/git.png') }}" width="22" height="22">
                         </a>
                     </ul>

@@ -55,7 +55,7 @@
                                     <i class="fas fa-cart-plus"></i>
                                     Buy
                                 </a>
-                                <a href="{{ url('product/add') }}" class="btn btn-primary">
+                                <a href="{{ url('cart/store', [$products->id]) }}" class="btn btn-primary">
                                     <i class="fas fa-plus"></i>
                                     Add
                                 </a>

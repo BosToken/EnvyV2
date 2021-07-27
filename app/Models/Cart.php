@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Address extends Model
+class Cart extends Model
 {
-    protected $table = 'addresss';
+    protected $table = 'carts';
     protected $fillable = [
         'user_id',
-        'country',
-        'province',
-        'city',
-        'address',
-        'post',
+        'product_id',
     ];
     
     public function users () {
         return $this->belongsTo('App\Models\User', 'user_id');
+    }
+
+    public function products () {
+        return $this->belongsTo('App\Models\Product', 'product_id');
     }
 }

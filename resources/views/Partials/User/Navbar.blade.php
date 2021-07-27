@@ -96,6 +96,13 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
                                     <li><a class="dropdown-item" href="{{ url('logout') }}">Logout</a></li>
                                 </ul>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ url('cart') }}">
+                                    Cart
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span class="badge bg-danger">0</span>
+                                </a>
+                            </li>
                             @else
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ url('login') }}">
@@ -104,13 +111,6 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
                                 </a>
                             </li>
                             @endif
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ url('Cart') }}">
-                                    Cart
-                                    <i class="fas fa-cart-plus"></i>
-                                    <span class="badge bg-danger">0</span>
-                                </a>
-                            </li>
                         </ul>
 
                     </div>
