@@ -32,7 +32,7 @@
                 <th scope="row">{{$number}}</th>
                 <td>Name : <strong>{{$carts->products->name_product}}</strong>
                 <br><br><img class="img-fluid shadow" width="250" src="{{ asset('products/' . $carts->products->image_product) }}" /></td>
-                <td>Price : RP. <strong>{{$carts->products->price_product}}</strong>
+                <td>Price : RP. <strong>{{ number_format($carts->products['price_product']) }}</strong>
                 <br><br>{{$carts->products->description_product}}</td>
                 <td><a href="{{ url('cart/destroy', [$carts->id]) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
               </tr>

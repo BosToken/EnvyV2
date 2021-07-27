@@ -14,7 +14,7 @@ class CartController extends Controller
     public function index(){
         $user = Session::get('user');
         $cart = User::find($user->id)->carts()->get();
-        // return $cart;
+
         return view('User.cart', compact('user', 'cart'));
     }
 

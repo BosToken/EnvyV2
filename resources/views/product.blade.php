@@ -50,7 +50,7 @@
                         <div class="card-body">
                             <div class="card-title">
                                 <h5>{{ $products->name_product }}</h5>
-                                <p>Price : <strong> RP. {{ $products->price_product }} </strong></p>
+                                <p>Price : RP. <strong>{{ number_format($products['price_product']) }}</strong></p>
                                 <a href="{{ url('product/detail') }}" class="btn btn-success">
                                     <i class="fas fa-cart-plus"></i>
                                     Buy

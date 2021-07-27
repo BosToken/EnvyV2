@@ -39,7 +39,7 @@
                                 <div class="card-body">
                                     <div class="card-title">
                                         <h5>{{ $products->name_product }}</h5>
-                                        <p>Price : <strong> RP. {{ $products->price_product }} </strong></p>
+                                        <p>Price : RP. <strong>{{ number_format($products['price_product']) }}</strong></p>
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#closedProduct{{ $products->id }}">
                                             <i class="fas fa-plus"></i>
