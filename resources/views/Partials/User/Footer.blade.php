@@ -6,19 +6,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-{{-- <style>
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: white;
-        text-align: center;
-        property: bottom,
-        /* values: $position-values */
-    }
-
-</style> --}}
+<style>
+    /* .footer {
+        background-color: black;
+        color: white;
+    } */
+</style>
 
 {{-- <footer>
 <div class="footer">
@@ -29,8 +22,8 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
 
 @section('footer')
 
-    <hr>
     <footer class="footer page-footer">
+        <hr>
         <div class="container">
             <div class="row">
                 <div class="col s6">
@@ -64,6 +57,9 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
                     <ul>
                         Contact
                         <br>
+                        <a href="mailto:faizdiandra11@gmail.com?subject=Saya%20tertarik%20dengan%20web%20ini" class="link-light" target="_blank">
+                            <img src="{{ asset('assets/gmail.png') }}" width="27" height="27">
+                        </a>
                         <a href="https://www.instagram.com/puckxou" class="link-light" target="_blank">
                             <img src="{{ asset('assets/ig.png') }}" width="25" height="25">
                         </a>

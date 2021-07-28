@@ -23,27 +23,6 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
-        // Product::create([
-        //     'name_product' => $request->name_product,
-        //     'description_product' => $request->description_product,
-        //     'image_product' => $request->image_product,
-        //     'quantity_product' => $request->quantity_product,
-        //     'price_product' => $request->price_product,
-        //     'gender_id' => $request->gender_id,
-        //     'type_id' => $request->type_id,
-        //     'size' => $request->size,
-        //     'color' => $request->color,
-        //     'archive' => $request->archive,
-        // ]);
-
-        // if ($request->hasFile('image_product')) {
-        //     $request->file('image_product')->move('products/', $request->file('image_product')->getClientOriginalName());
-        //     $data->image = $request->file('image_product')->getClientOriginalName();
-        //     $data->save();
-        // }
-
-        // V2
-
         $this->validate($request, [
             'name_product'     => 'required',
             'description_product'       => 'required',
@@ -122,5 +101,29 @@ class ProductController extends Controller
         ]);
 
         return redirect()->action([ProductController::class, 'archiveProduct']);
+    }
+
+    public function men(){
+        $user = Session::get('user');
+        $men = Product::where('gender_id', 1)->get();
+        return view('men', compact('user', 'men'));
+    }
+
+    public function woman(){
+        $user = Session::get('user');
+        $woman = Product::where('gender_id', 2)->get();
+        return view('woman', compact('user', 'woman'));
+    }
+    
+    public function kid(){
+        $user = Session::get('user');
+        $kid = Product::where('gender_id', 3)->get();
+        return view('kid', compact('user', 'kid'));
+    }
+    
+    public function bag(){
+        $user = Session::get('user');
+        $bag = Product::where('gender_id', 4)->get();
+        return view('bag', compact('user', 'bag'));
     }
 }

@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('',[UserController::class, 'welcome']);
 Route::get('product',[UserController::class, 'product']);
+Route::get('product/men',[ProductController::class, 'men']);
+Route::get('product/woman',[ProductController::class, 'woman']);
+Route::get('product/kid',[ProductController::class, 'kid']);
+Route::get('product/bag',[ProductController::class, 'bag']);
 
 Route::get('login',[UserController::class, 'login']);
 Route::post('login/check', [UserController::class, 'check']);
