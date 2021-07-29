@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,3 +56,9 @@ Route::put('admin/closedProduct/update/{id}', [ProductController::class, 'closed
 
 Route::get('admin/archiveProduct', [ProductController::class, 'archiveProduct']);
 Route::put('admin/archiveProduct/update/{id}', [ProductController::class, 'archiveUpdate']);
+
+Route::get('admin/setting', [SettingController::class, 'index']);
+Route::put('admin/setting/emailUpdate/{id}', [SettingController::class, 'email']);
+Route::put('admin/setting/instagramUpdate/{id}', [SettingController::class, 'instagram']);
+Route::put('admin/setting/whatsappUpdate/{id}', [SettingController::class, 'whatsapp']);
+Route::put('admin/setting/titleUpdate/{id}', [SettingController::class, 'title']);

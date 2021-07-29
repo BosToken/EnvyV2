@@ -20,7 +20,6 @@
                                 <li><a class="dropdown-item" href="{{ url('') }}">Home</a></li>
                                 <hr>
                                 <li><a class="dropdown-item" href="{{ url('profile') }}">Profile</a></li>
-                                <li><a class="dropdown-item" href="{{ url('setting') }}">Setting</a></li>
                                 <li><a class="dropdown-item" href="{{ url('logout') }}">Logout</a></li>
                             </ul>
                         </li>

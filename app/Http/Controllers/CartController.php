@@ -7,15 +7,17 @@ use App\Models\User;
 use App\Models\Address;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
     public function index(){
         $user = Session::get('user');
+        $setting = Setting::get();
         $cart = User::find($user->id)->carts()->get();
 
-        return view('User.cart', compact('user', 'cart'));
+        return view('User.cart', compact('user', 'cart', 'setting'));
     }
 
     public function store(Request $request, $id)

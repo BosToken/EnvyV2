@@ -15,6 +15,8 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
 
 </style>
 
+@foreach ($setting as $settings)
+
 @extends('Partials/User/Footer')
 
 @section('navbar')
@@ -30,8 +32,7 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                            <a class="navbar-brand" href="{{ url('') }}">AppTitle</a>
+                            <a class="navbar-brand" href="{{ url('') }}">{{$settings->title_app}}</a>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ url('product') }}">Product</a>
                             </li>
@@ -91,7 +92,6 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
                                     @else
                                     @endif
                                     <li><a class="dropdown-item" href="{{ url('profile') }}">Profile</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('setting') }}">Setting</a></li>
                                     <li><a class="dropdown-item" href="{{ url('logout') }}">Logout</a></li>
                                 </ul>
                             </li>
@@ -122,3 +122,5 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
 
     @section('footer')
     @endsection
+
+    @endforeach

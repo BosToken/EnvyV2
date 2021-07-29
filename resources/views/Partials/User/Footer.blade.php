@@ -55,15 +55,14 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
                 </div>
                 <div class="col s6">
                     <ul>
-                        Contact
                         <br>
-                        <a href="mailto:faizdiandra11@gmail.com?subject=Saya%20tertarik%20dengan%20web%20ini" class="link-light" target="_blank">
+                        <a href="{{ url('mailto:' . $settings->email_app) }}" class="link-light" target="_blank">
                             <img src="{{ asset('assets/gmail.png') }}" width="27" height="27">
                         </a>
-                        <a href="https://www.instagram.com/puckxou" class="link-light" target="_blank">
+                        <a href="{{ url('https://www.instagram.com/' . $settings->instagram_app) }}" class="link-light" target="_blank">
                             <img src="{{ asset('assets/ig.png') }}" width="25" height="25">
                         </a>
-                        <a href="https://wa.me/6281232857502/?text=Saya%20tertarik%20dengan%20web%20ini" class="link-light" target="_blank">
+                        <a href="{{ url('https://wa.me/62' . $settings->whatsapp_app . '/?text=Saya%20tertarik%20dengan%20web%20ini') }}" class="link-light" target="_blank">
                             <img src="{{ asset('assets/whats.png') }}" width="25" height="25">
                         </a>
                         <a href="https://github.com/BosToken" class="link-light" target="_blank">
@@ -74,7 +73,7 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    <center>&copy; 2021 Copyright App title</center>
+                    <center>&copy;2021 Copyright {{$settings->title_app}}</center>
                 </div>
             </div>
         </div>

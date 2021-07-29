@@ -8,6 +8,7 @@ use App\Models\Address;
 use App\Models\Product;
 use App\Models\Gender;
 use App\Models\Type;
+use App\Models\Setting;
 
 use Illuminate\Http\Request;
 
@@ -16,10 +17,11 @@ class ProductController extends Controller
     public function index()
     {
         $user = Session::get('user');
+        $setting = Setting::get();
         $product = Product::get();
         $gender = Gender::get();
         $type = Type::get();
-        return view('Admin.addProduct', compact('user', 'product', 'gender', 'type'));
+        return view('Admin.addProduct', compact('user', 'setting', 'product', 'gender', 'type'));
     }
     public function store(Request $request)
     {
@@ -68,14 +70,16 @@ class ProductController extends Controller
     {
         $product = Product::get();
         $user = Session::get('user');
-        return view('Admin.activeProduct', compact('user', 'product'));
+        $setting = Setting::get();
+        return view('Admin.activeProduct', compact('user', 'setting', 'product'));
     }
 
     public function closedProduct()
     {
         $product = Product::get();
         $user = Session::get('user');
-        return view('Admin.closedProduct', compact('user', 'product'));
+        $setting = Setting::get();
+        return view('Admin.closedProduct', compact('user', 'setting', 'product'));
     }
 
     public function closedUpdate(Request $request, $id)
@@ -91,7 +95,8 @@ class ProductController extends Controller
     {
         $product = Product::get();
         $user = Session::get('user');
-        return view('Admin.archiveProduct', compact('user', 'product'));
+        $setting = Setting::get();
+        return view('Admin.archiveProduct', compact('user', 'setting', 'product'));
     }
 
     public function archiveUpdate(Request $request, $id)
@@ -105,25 +110,29 @@ class ProductController extends Controller
 
     public function men(){
         $user = Session::get('user');
+        $setting = Setting::get();
         $men = Product::where('gender_id', 1)->get();
-        return view('men', compact('user', 'men'));
+        return view('men', compact('user', 'men', 'setting'));
     }
 
     public function woman(){
         $user = Session::get('user');
+        $setting = Setting::get();
         $woman = Product::where('gender_id', 2)->get();
-        return view('woman', compact('user', 'woman'));
+        return view('woman', compact('user', 'woman', 'setting'));
     }
     
     public function kid(){
         $user = Session::get('user');
+        $setting = Setting::get();
         $kid = Product::where('gender_id', 3)->get();
-        return view('kid', compact('user', 'kid'));
+        return view('kid', compact('user', 'kid', 'setting'));
     }
     
     public function bag(){
         $user = Session::get('user');
+        $setting = Setting::get();
         $bag = Product::where('gender_id', 4)->get();
-        return view('bag', compact('user', 'bag'));
+        return view('bag', compact('user', 'bag', 'setting'));
     }
 }

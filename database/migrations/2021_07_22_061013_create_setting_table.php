@@ -15,8 +15,17 @@ class CreateSettingTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id('id');
-            $table->string('lang');
-            $table->string('theme');
+
+            //app
+            $table->string('title_app');
+            $table->string('lang_app');
+            $table->string('image_app');
+
+            //contact
+            $table->string('email_app');
+            $table->string('instagram_app');
+            $table->string('whatsapp_app');
+
             $table->timestamps();
         });
     }

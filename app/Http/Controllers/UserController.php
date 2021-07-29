@@ -6,6 +6,7 @@ use Session;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Product;
+use App\Models\Setting;
 
 use Illuminate\Http\Request;
 
@@ -14,20 +15,24 @@ class UserController extends Controller
     public function welcome()
     {
         $user = Session::get('user');
-        return view('welcome', compact('user'));
+        $setting = Setting::get();
+        // return $setting;
+        return view('welcome', compact('user', 'setting'));
     }
 
     public function product()
     {
         $product = Product::where('archive', 1)->get();
         $user = Session::get('user');
-        return view('product', compact('user', 'product'));
+        $setting = Setting::get();
+        return view('product', compact('user', 'product', 'setting'));
     }
 
     public function login()
     {
         $user = Session::get('user');
-        return view('login', compact('user'));
+        $setting = Setting::get();
+        return view('login', compact('user', 'setting'));
     }
 
     public function check(Request $request)
@@ -51,7 +56,8 @@ class UserController extends Controller
     public function register()
     {
         $user = Session::get('user');
-        return view('register', compact('user'));
+        $setting = Setting::get();
+        return view('register', compact('user', 'setting'));
     }
 
     public function store(Request $request)
@@ -89,10 +95,11 @@ class UserController extends Controller
     {
         $user = Session::get('user');
         $address = User::find($user->id)->addresss()->get();
+        $setting = Setting::get();
         // $user->load('address');
         // return $user;
         // return $address;
-        return view('User.profile', compact('user', 'address'));
+        return view('User.profile', compact('user', 'address', 'setting'));
     }
 
     public function profileUsername(Request $request, $id)

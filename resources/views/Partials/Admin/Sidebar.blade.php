@@ -70,117 +70,122 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
 
 </head>
 
-@section('sidebar')
+@foreach ($setting as $settings)
 
-    <body>
-        <div class="page-wrapper chiller-theme toggled">
-            <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
-                <i class="fas fa-bars"></i>
-            </a>
-            <nav id="sidebar" class="sidebar-wrapper">
-                <div class="sidebar-content">
-                    <div class="sidebar-brand">
-                        <a href="#">AppTitle</a>
-                    </div>
-                    <div class="sidebar-header">
-                        <div class="user-info">
-                            <span class="user-name">
-                                <i class="fas fa-users"></i>
-                                <strong>{{ $user->username }}</strong>
-                            </span>
-                            <span class="user-role">Administrator</span>
+    @section('sidebar')
+
+        <body>
+            <div class="page-wrapper chiller-theme toggled">
+                <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <nav id="sidebar" class="sidebar-wrapper">
+                    <div class="sidebar-content">
+                        <div class="sidebar-brand">
+                            <a href="{{ url('admin/dashboard') }}">{{$settings->title_app}}</a>
                         </div>
-                    </div>
-                    <!-- sidebar-search  -->
-                    <div class="sidebar-menu">
-                        <ul>
-                            <li class="header-menu">
-                                <span class="text-light">General</span>
-                            </li>
-                            <li class="sidebar">
-                                <a href="{{ url('admin/dashboard') }}">
-                                    {{-- <i class="fa fa-tachometer-alt"></i> --}}
-                                    <i class="fas fa-clipboard-list"></i>
-                                    <span>Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="sidebar">
-                                <a href="{{url('admin/addProduct')}}">
-                                    {{-- <i class="fa fa-shopping-cart"></i> --}}
-                                    <i class="fas fa-folder-plus"></i>
-                                    <span>Add Product</span>
-                                </a>
-                            </li>
-                            <li class="sidebar">
-                                <a href="{{url('admin/activeProduct')}}">
-                                    {{-- <i class="far fa-gem"></i> --}}
-                                    <i class="fas fa-check"></i>
-                                    <span>Active Product</span>
-                                </a>
-                            </li>
-                            <li class="sidebar">
-                                <a href="{{url('admin/closedProduct')}}">
-                                    {{-- <i class="fa fa-chart-line"></i> --}}
-                                    <i class="fas fa-times"></i>
-                                    <span>Closed Product</span>
-                                </a>
-                            </li>
-                            <li class="sidebar">
-                                <a href="{{url('admin/archiveProduct')}}">
-                                    {{-- <i class="fa fa-globe"></i> --}}
-                                    <i class="fas fa-file-archive"></i>
-                                    <span>Archive Product</span>
-                                </a>
-                            </li>
-                            <li class="sidebar">
-                                <a href="#">
-                                    {{-- <i class="fa fa-globe"></i> --}}
-                                    <i class="fas fa-exchange-alt"></i>
-                                    <span>Transaction</span>
-                                </a>
-                            </li>
-                            <li class="sidebar">
-                                <a href="#">
-                                    {{-- <i class="fa fa-globe"></i> --}}
-                                    <i class="fas fa-history"></i>
-                                    <span>History Transaction</span>
-                                </a>
-                            </li>
-                            <br>
-                            <li class="header-menu">
-                                <span class="text-light">Extra</span>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    {{-- <i class="fa fa-book"></i> --}}
-                                    <span>Documentation</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    {{-- <i class="fa fa-calendar"></i> --}}
-                                    <span>Calendar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    {{-- <i class="fa fa-folder"></i> --}}
-                                    <span>Examples</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- sidebar-menu  -->
-            </nav>
-            <!-- sidebar-wrapper  -->
+                        <div class="sidebar-header">
+                            <div class="user-info">
+                                <span class="user-name">
+                                    <i class="fas fa-users"></i>
+                                    <strong>{{ $user->username }}</strong>
+                                </span>
+                                <span class="user-role">Administrator</span>
+                            </div>
+                        </div>
+                        <!-- sidebar-search  -->
+                        <div class="sidebar-menu">
+                            <ul>
+                                <li class="header-menu">
+                                    <span class="text-light">General</span>
+                                </li>
+                                <li class="sidebar">
+                                    <a href="{{ url('admin/dashboard') }}">
+                                        {{-- <i class="fa fa-tachometer-alt"></i> --}}
+                                        <i class="fas fa-clipboard-list"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar">
+                                    <a href="{{ url('admin/addProduct') }}">
+                                        {{-- <i class="fa fa-shopping-cart"></i> --}}
+                                        <i class="fas fa-folder-plus"></i>
+                                        <span>Add Product</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar">
+                                    <a href="{{ url('admin/activeProduct') }}">
+                                        {{-- <i class="far fa-gem"></i> --}}
+                                        <i class="fas fa-check"></i>
+                                        <span>Active Product</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar">
+                                    <a href="{{ url('admin/closedProduct') }}">
+                                        {{-- <i class="fa fa-chart-line"></i> --}}
+                                        <i class="fas fa-times"></i>
+                                        <span>Closed Product</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar">
+                                    <a href="{{ url('admin/archiveProduct') }}">
+                                        {{-- <i class="fa fa-globe"></i> --}}
+                                        <i class="fas fa-file-archive"></i>
+                                        <span>Archive Product</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar">
+                                    <a href="#">
+                                        {{-- <i class="fa fa-globe"></i> --}}
+                                        <i class="fas fa-exchange-alt"></i>
+                                        <span>Transaction</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar">
+                                    <a href="#">
+                                        {{-- <i class="fa fa-globe"></i> --}}
+                                        <i class="fas fa-history"></i>
+                                        <span>History Transaction</span>
+                                    </a>
+                                </li>
+                                <br>
+                                <li class="header-menu">
+                                    <span class="text-light">Extra</span>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/setting') }}">
+                                        {{-- <i class="fa fa-book"></i> --}}
+                                        <i class="fas fa-sliders-h"></i>
+                                        <span>App Setting</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        {{-- <i class="fa fa-calendar"></i> --}}
+                                        <span>Calendar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        {{-- <i class="fa fa-folder"></i> --}}
+                                        <span>Examples</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- sidebar-menu  -->
+                </nav>
+                <!-- sidebar-wrapper  -->
 
-            <main class="page-content">
-                @yield('content')
-            </main>
+                <main class="page-content">
+                    @yield('content')
+                </main>
 
-            <!-- page-content" -->
-        </div>
+                <!-- page-content" -->
+            </div>
 
-    </body>
+        </body>
 
     </html>
+
+    @endforeach
