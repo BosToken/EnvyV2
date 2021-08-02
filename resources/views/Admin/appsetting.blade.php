@@ -38,7 +38,12 @@
                     </button>
                     <br>
                     <br>
-                    App Language : <strong>{{$settings->lang_app}}</strong>
+                    App Language : <strong>
+                        @if ($settings->lang_app === "eng")
+                            English
+                        @else
+                            Not Yet
+                        @endif</strong>
                     <br>
                     <br>
                     App Image : 

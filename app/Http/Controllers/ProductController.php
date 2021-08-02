@@ -112,27 +112,48 @@ class ProductController extends Controller
         $user = Session::get('user');
         $setting = Setting::get();
         $men = Product::where('gender_id', 1)->get();
-        return view('men', compact('user', 'men', 'setting'));
+        if ($user) {
+            $quantity = User::find($user->id)->carts()->count();
+            return view('men', compact('user', 'men', 'setting', 'quantity'));
+        } else {
+            return view('men', compact('user', 'men', 'setting'));
+        }
+
     }
 
     public function woman(){
         $user = Session::get('user');
         $setting = Setting::get();
         $woman = Product::where('gender_id', 2)->get();
-        return view('woman', compact('user', 'woman', 'setting'));
+        if ($user) {
+            $quantity = User::find($user->id)->carts()->count();
+            return view('woman', compact('user', 'woman', 'setting', 'quantity'));
+        } else {
+            return view('woman', compact('user', 'woman', 'setting'));
+        }
     }
     
     public function kid(){
         $user = Session::get('user');
         $setting = Setting::get();
         $kid = Product::where('gender_id', 3)->get();
-        return view('kid', compact('user', 'kid', 'setting'));
+        if ($user) {
+            $quantity = User::find($user->id)->carts()->count();
+            return view('kid', compact('user', 'kid', 'setting', 'quantity'));
+        } else {
+            return view('kid', compact('user', 'kid', 'setting'));
+        }
     }
     
     public function bag(){
         $user = Session::get('user');
         $setting = Setting::get();
         $bag = Product::where('gender_id', 4)->get();
-        return view('bag', compact('user', 'bag', 'setting'));
+        if ($user) {
+            $quantity = User::find($user->id)->carts()->count();
+            return view('bag', compact('user', 'bag', 'setting', 'quantity'));
+        } else {
+            return view('bag', compact('user', 'bag', 'setting'));
+        }
     }
 }

@@ -16,8 +16,12 @@ class CartController extends Controller
         $user = Session::get('user');
         $setting = Setting::get();
         $cart = User::find($user->id)->carts()->get();
-
-        return view('User.cart', compact('user', 'cart', 'setting'));
+        if ($user) {
+            $quantity = User::find($user->id)->carts()->count();
+            return view('User.cart', compact('user', 'cart', 'setting', 'quantity'));
+        } else {
+            return view('User.cart', compact('user', 'cart', 'setting'));
+        }
     }
 
     public function store(Request $request, $id)

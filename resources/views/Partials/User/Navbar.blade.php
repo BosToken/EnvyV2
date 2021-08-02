@@ -10,117 +10,123 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
 <script src="https://kit.fontawesome.com/a47e0565cc.js" crossorigin="anonymous"></script>
 
 <style>
-    .navbar {
-    }
+    .navbar {}
 
 </style>
 
 @foreach ($setting as $settings)
 
-@extends('Partials/User/Footer')
+    @extends('Partials/User/Footer')
 
-@section('navbar')
+    @section('navbar')
 
-    <head>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <a class="navbar-brand" href="{{ url('') }}">{{$settings->title_app}}</a>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ url('product') }}">Product</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-male"></i>
-                                    Men
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Shirt</a></li>
-                                    <li><a class="dropdown-item" href="#">TShirt</a></li>
-                                    <li><a class="dropdown-item" href="#">Jacket</a></li>
-                                    <li><a class="dropdown-item" href="#">Hoodie</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-female"></i>
-                                    Woman
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Shirt</a></li>
-                                    <li><a class="dropdown-item" href="#">TShirt</a></li>
-                                    <li><a class="dropdown-item" href="#">Jacket</a></li>
-                                    <li><a class="dropdown-item" href="#">Hoodie</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-child"></i>
-                                    Kids
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Shirt</a></li>
-                                    <li><a class="dropdown-item" href="#">TShirt</a></li>
-                                    <li><a class="dropdown-item" href="#">Jacket</a></li>
-                                    <li><a class="dropdown-item" href="#">Hoodie</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+        <head>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <a class="navbar-brand" href="{{ url('') }}">{{ $settings->title_app }}</a>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{{ url('product') }}">Product</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-male"></i>
+                                        Men
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Shirt</a></li>
+                                        <li><a class="dropdown-item" href="#">TShirt</a></li>
+                                        <li><a class="dropdown-item" href="#">Jacket</a></li>
+                                        <li><a class="dropdown-item" href="#">Hoodie</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-female"></i>
+                                        Woman
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Shirt</a></li>
+                                        <li><a class="dropdown-item" href="#">TShirt</a></li>
+                                        <li><a class="dropdown-item" href="#">Jacket</a></li>
+                                        <li><a class="dropdown-item" href="#">Hoodie</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-child"></i>
+                                        Kids
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Shirt</a></li>
+                                        <li><a class="dropdown-item" href="#">TShirt</a></li>
+                                        <li><a class="dropdown-item" href="#">Jacket</a></li>
+                                        <li><a class="dropdown-item" href="#">Hoodie</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
 
-                        <ul class="navbar-nav mt-auto mb-2">
-                            @if($user)
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-users"></i>
-                                    {{$user->username}}
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    @if($user->role === 1)
-                                    <li><a class="dropdown-item" href="{{ url('admin/dashboard') }}">Admin Pages</a></li>
-                                    <hr>
-                                    @else
-                                    @endif
-                                    <li><a class="dropdown-item" href="{{ url('profile') }}">Profile</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('logout') }}">Logout</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ url('cart') }}">
-                                    Cart
-                                    <i class="fas fa-cart-plus"></i>
-                                    <span class="badge bg-danger">0</span>
-                                </a>
-                            </li>
-                            @else
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ url('login') }}">
-                                    <i class="fas fa-users"></i>
-                                    SignIn/SignUp
-                                </a>
-                            </li>
-                            @endif
-                        </ul>
+                            <ul class="navbar-nav mt-auto mb-2">
+                                @if ($user)
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fas fa-users"></i>
+                                            {{ $user->username }}
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            @if ($user->role === 1)
+                                                <li><a class="dropdown-item" href="{{ url('admin/dashboard') }}">Admin
+                                                        Pages</a></li>
+                                                <hr>
+                                            @else
+                                            @endif
+                                            <li><a class="dropdown-item" href="{{ url('profile') }}">Profile</a></li>
+                                            <li><a class="dropdown-item" href="{{ url('logout') }}">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="{{ url('cart') }}">
+                                            Cart
+                                            <i class="fas fa-cart-plus"></i>
+                                            @if ($quantity)
+                                            <span class="badge bg-danger">
+                                                {{ $quantity }}
+                                            </span>
+                                            @else
 
+                                            @endif
+                                        </a>
+                                    </li>
+                                @else
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="{{ url('login') }}">
+                                            <i class="fas fa-users"></i>
+                                            SignIn/SignUp
+                                        </a>
+                                    </li>
+                                @endif
+                            </ul>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </head>
+            </nav>
+        </head>
 
-    @yield('content')
+        @yield('content')
 
     @section('footer')
     @endsection
 
-    @endforeach
+@endforeach
