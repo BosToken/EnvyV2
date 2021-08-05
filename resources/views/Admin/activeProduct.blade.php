@@ -36,12 +36,15 @@
                                 <div class="card-body">
                                     <div class="card-title">
                                         <h5>{{ $products->name_product }}</h5>
-                                        <p>Price : RP. <strong>{{ number_format($products['price_product']) }}</strong></p>
-                                        <a href="{{ url('product/detail') }}" class="btn btn-success">
+                                        <p>Price : RP. <strong>{{ number_format($products['price_product']) }}</strong>
+                                        </p>
+                                        <a href="{{ url('admin/detailProduct/detail', [$products->id]) }}"
+                                            class="btn btn-success">
                                             <i class="fas fa-pen"></i>
                                         </a>
-        
-                                        <a href="{{ url('admin/addProduct/destroy', [$products->id]) }}" class="btn btn-danger">
+
+                                        <a href="{{ url('admin/addProduct/destroy', [$products->id]) }}"
+                                            class="btn btn-danger">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </div>

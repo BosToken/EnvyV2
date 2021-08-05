@@ -50,6 +50,7 @@ Route::post('admin/addProduct/store', [ProductController::class, 'store']);
 Route::get('admin/addProduct/destroy/{id}',[ProductController::class, 'destroy']);
 
 Route::get('admin/activeProduct', [ProductController::class, 'activeProduct']);
+Route::get('admin/detailProduct/detail/{id}', [ProductController::class, 'update']);
 
 Route::get('admin/closedProduct', [ProductController::class, 'closedProduct']);
 Route::put('admin/closedProduct/update/{id}', [ProductController::class, 'closedUpdate']);

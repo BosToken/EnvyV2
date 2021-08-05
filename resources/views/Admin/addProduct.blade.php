@@ -39,7 +39,9 @@
                             <div class="card-title">
                                 <h5>{{ $products->name_product }}</h5>
                                 <p>Price : RP. <strong>{{ number_format($products['price_product']) }}</strong></p>
-                                <a href="{{ url('product/detail') }}" class="btn btn-success">
+
+                                <a href="{{ url('admin/detailProduct/detail', [$products->id]) }}"
+                                    class="btn btn-success">
                                     <i class="fas fa-pen"></i>
                                 </a>
 
@@ -66,50 +68,57 @@
                                 </strong></h5>
                             <div class="mb-3">
                                 <label for="name_product">Name Product</label>
-                                <input type="text" class="form-control" id="name_product" for="name_product" name="name_product" required>
+                                <input type="text" class="form-control" id="name_product" for="name_product"
+                                    name="name_product" required>
                             </div>
                             <div class="md-3">
                                 <div class="form-group">
-                                <label for="description_product" class="form-label">Description</label>
+                                    <label for="description_product" class="form-label">Description</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                         </div>
-                                        <textarea class="form-control" aria-label="With textarea" name="description_product" type="text"></textarea>
+                                        <textarea class="form-control" aria-label="With textarea" name="description_product"
+                                            type="text"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="image_product">Image</label>
-                                <input type="file" class="form-control" id="image_product" for="image_product" name="image_product" required>
+                                <input type="file" class="form-control" id="image_product" for="image_product"
+                                    name="image_product" required>
                             </div>
                             <div class="mb-3">
                                 <label for="price_product">Price</label>
-                                <input type="number" class="form-control" id="price_product" for="price_product" name="price_product"
-                                    required>
+                                <input type="number" class="form-control" id="price_product" for="price_product"
+                                    name="price_product" required>
                             </div>
                             <div class="mb-3">
                                 <label for="quantity_product">Quantity Product</label>
-                                <input type="number" class="form-control" id="quantity_product" for="quantity_product" name="quantity_product" required>
+                                <input type="number" class="form-control" id="quantity_product" for="quantity_product"
+                                    name="quantity_product" required>
                             </div>
                             <div class="mb-3">
                                 <label for="gender_id">Gender</label>
-                                <select class="form-select" aria-label="Default select example" id="gender_id" for="gender_id" name="gender_id">
+                                <select class="form-select" aria-label="Default select example" id="gender_id"
+                                    for="gender_id" name="gender_id">
                                     @foreach ($gender as $genders)
-                                    <option value={{$genders->id}}>{{$genders->name_gender}}</option>
+                                        <option value={{ $genders->id }}>{{ $genders->name_gender }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="type_id">Type</label>
-                                <select class="form-select" aria-label="Default select example" id="type_id" for="type_id" name="type_id">
+                                <select class="form-select" aria-label="Default select example" id="type_id" for="type_id"
+                                    name="type_id">
                                     @foreach ($type as $types)
-                                    <option value={{$types->id}}>{{$types->name_type}}</option>
+                                        <option value={{ $types->id }}>{{ $types->name_type }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="size">Size</label>
-                                <select class="form-select" aria-label="Default select example" id="size" for="size" name="size">
+                                <select class="form-select" aria-label="Default select example" id="size" for="size"
+                                    name="size">
                                     <option selected value='S'>S</option>
                                     <option value='M'>M</option>
                                     <option value='L'>L</option>
@@ -123,7 +132,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="archive">Archive</label>
-                                <select class="form-select" aria-label="Default select example" id="archive" for="archive" name="archive">
+                                <select class="form-select" aria-label="Default select example" id="archive" for="archive"
+                                    name="archive">
                                     <option selected value=1>No</option>
                                     <option value=2>Yes</option>
                                 </select>

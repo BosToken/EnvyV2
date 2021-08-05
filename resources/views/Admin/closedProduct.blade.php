@@ -39,7 +39,14 @@
                                 <div class="card-body">
                                     <div class="card-title">
                                         <h5>{{ $products->name_product }}</h5>
-                                        <p>Price : RP. <strong>{{ number_format($products['price_product']) }}</strong></p>
+                                        <p>Price : RP. <strong>{{ number_format($products['price_product']) }}</strong>
+                                        </p>
+
+                                        <a href="{{ url('admin/detailProduct/detail', [$products->id]) }}"
+                                            class="btn btn-success">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#closedProduct{{ $products->id }}">
                                             <i class="fas fa-plus"></i>
@@ -73,8 +80,9 @@
                                             <center>Add Stock</center>
                                         </strong></h5>
                                     <div class="mb-3">
-                                        <label for="quantity_product">Stcok</label>
-                                        <input type="number" class="form-control" id="quantity_product" for="quantity_product" name="quantity_product"
+                                        <label for="quantity_product">Stock</label>
+                                        <input type="number" class="form-control" id="quantity_product"
+                                            for="quantity_product" name="quantity_product"
                                             value="{{ $products->quantity_product }}" required>
                                     </div>
                                     <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>

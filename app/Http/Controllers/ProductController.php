@@ -9,7 +9,7 @@ use App\Models\Product;
 use App\Models\Gender;
 use App\Models\Type;
 use App\Models\Setting;
-
+use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -155,5 +155,14 @@ class ProductController extends Controller
         } else {
             return view('bag', compact('user', 'bag', 'setting'));
         }
+    }
+
+    public function update(Request $request, $id){
+        $user = Session::get('user');
+        $setting = Setting::get();
+        $product = Product::where('id', $id)->get();
+
+        return view('Admin.detailProduct', compact('user', 'setting', 'product'));
+
     }
 }
