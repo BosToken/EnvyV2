@@ -157,12 +157,46 @@ class ProductController extends Controller
         }
     }
 
-    public function update(Request $request, $id){
+    public function detail(Request $request, $id){
         $user = Session::get('user');
         $setting = Setting::get();
+        $gender = Gender::get();
+        $type = Type::get();
         $product = Product::where('id', $id)->get();
 
-        return view('Admin.detailProduct', compact('user', 'setting', 'product'));
+        return view('Admin.detailProduct', compact('user', 'setting', 'product', 'gender', 'type'));
 
+    }
+    public function update(Request $request, $id)
+    {
+
+         Product::where('id', $id)->update([
+            'name_product' => $request->name_product,
+            'description_product' => $request->description_product,
+            'price_product' => $request->price_product,
+            'quantity_product' => $request->quantity_product,
+            'gender_id' => $request->gender_id,
+            'type_id' => $request->type_id,
+            'size' => $request->size,
+            'color' => $request->color,
+            'archive' => $request->archive
+        ]);
+
+        return back();
+    }
+
+    public function imgUpdate(Request $request, $id)
+    {
+        
+        $image = $request->file('image_product');
+        $move = "products";
+        
+        Product::where('id', $id)->update([
+            'image_product' => $image->getClientOriginalName()
+        ]);
+
+        $image->move($move, $image->getClientOriginalName());
+        
+        return back();
     }
 }

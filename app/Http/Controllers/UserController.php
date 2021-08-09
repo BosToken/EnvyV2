@@ -146,4 +146,8 @@ class UserController extends Controller
         $request->session()->put('user', $data);
         return redirect()->action([UserController::class, 'profile']);
     }
+
+    public function back(){
+        return back();
+    }
 }

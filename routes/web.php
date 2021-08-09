@@ -50,7 +50,9 @@ Route::post('admin/addProduct/store', [ProductController::class, 'store']);
 Route::get('admin/addProduct/destroy/{id}',[ProductController::class, 'destroy']);
 
 Route::get('admin/activeProduct', [ProductController::class, 'activeProduct']);
-Route::get('admin/detailProduct/detail/{id}', [ProductController::class, 'update']);
+Route::get('admin/detailProduct/detail/{id}', [ProductController::class, 'detail']);
+Route::put('admin/detailProduct/update/{id}', [ProductController::class, 'update']);
+Route::put('admin/detailProduct/imgUpdate/{id}', [ProductController::class, 'imgUpdate']);
 
 Route::get('admin/closedProduct', [ProductController::class, 'closedProduct']);
 Route::put('admin/closedProduct/update/{id}', [ProductController::class, 'closedUpdate']);
@@ -63,3 +65,6 @@ Route::put('admin/setting/emailUpdate/{id}', [SettingController::class, 'email']
 Route::put('admin/setting/instagramUpdate/{id}', [SettingController::class, 'instagram']);
 Route::put('admin/setting/whatsappUpdate/{id}', [SettingController::class, 'whatsapp']);
 Route::put('admin/setting/titleUpdate/{id}', [SettingController::class, 'title']);
+
+
+Route::get('back',[UserController::class, 'back']);

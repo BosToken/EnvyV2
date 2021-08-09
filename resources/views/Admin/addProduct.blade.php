@@ -55,7 +55,7 @@
             @endforeach
         </div>
 
-        <!-- Add Address Modal -->
+        <!-- Add Product Modal -->
         <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <form action="{{ url('admin/addProduct/store') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
