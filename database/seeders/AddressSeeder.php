@@ -22,6 +22,7 @@ class AddressSeeder extends Seeder
             'city' => '札幌市',
             'address' => '原子力発電所',
             'post' => 65154,
+            'main' => 'Yes',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -33,6 +34,7 @@ class AddressSeeder extends Seeder
             'city' => 'Malang',
             'address' => 'Jl.Pesona Wisnuwardana III No.6',
             'post' => 65154,
+            'main' => 'Yes',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -44,6 +46,7 @@ class AddressSeeder extends Seeder
             'city' => 'Malang',
             'address' => 'Jl.Pesona Wisnuwardana III No.6',
             'post' => 65154,
+            'main' => 'Yes',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);

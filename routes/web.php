@@ -26,6 +26,8 @@ Route::get('product/woman',[ProductController::class, 'woman']);
 Route::get('product/kid',[ProductController::class, 'kid']);
 Route::get('product/bag',[ProductController::class, 'bag']);
 
+Route::get('product/buy/{id}', [ProductController::class, 'buy']);
+
 Route::get('login',[UserController::class, 'login']);
 Route::post('login/check', [UserController::class, 'check']);
 Route::get('logout', [UserController::class, 'logout']);

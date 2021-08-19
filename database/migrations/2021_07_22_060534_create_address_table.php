@@ -21,6 +21,7 @@ class CreateAddressTable extends Migration
             $table->string('city')->nullable();
             $table->string('address')->nullable();
             $table->integer('post')->nullable();
+            $table->string('main')->nullable();
             $table->timestamps();
         });
     }

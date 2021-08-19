@@ -25,7 +25,7 @@
                 </nav>
             </div>
         </div>
-        <div class="row mb-3">
+        <div class="row mt-3">
             <h2>
                 <strong>
                     <center>
@@ -33,7 +33,7 @@
                     </center>
                 </strong>
             </h2>
-            <p><strong>User : Email : user@gmail.com | Password : user</strong></p>
+            <p><strong>User : Email : user@gmail.com | Password : user </strong></p>
             <p><strong>Admin : Email : admin@gmail.com | Password : admin</strong></p>
             <br>
             <div class="col">

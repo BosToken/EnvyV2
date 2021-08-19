@@ -23,6 +23,22 @@ class ProductController extends Controller
         $type = Type::get();
         return view('Admin.addProduct', compact('user', 'setting', 'product', 'gender', 'type'));
     }
+
+    public function buy(Request $request, $id){
+        $user = Session::get('user');
+        $setting = Setting::get();
+        $product = Product::where('id', $id)->get();
+        $address = User::find($user->id)->addresss()->where('main', 'Yes')->get();
+
+        if ($user) {
+            $quantity = User::find($user->id)->carts()->count();
+            return view('User.buyRightAway', compact('user', 'product', 'setting', 'quantity', 'address'));
+        } else {
+            return view('User.buyRightAway', compact('user', 'product', 'setting', 'address'));
+        }
+    }
+
+
     public function store(Request $request)
     {
         $this->validate($request, [
