@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Session;
+use App\Models\Cart;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Product;
@@ -24,7 +25,8 @@ class ProductController extends Controller
         return view('Admin.addProduct', compact('user', 'setting', 'product', 'gender', 'type'));
     }
 
-    public function buy(Request $request, $id){
+    public function buy(Request $request, $id)
+    {
         $user = Session::get('user');
         $setting = Setting::get();
         $product = Product::where('id', $id)->get();
@@ -78,7 +80,17 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        Product::where('id', $id)->delete();
+        $availableCarts = Cart::where('product_id', $id)->get();
+        if (count($availableCarts) === 0) {
+            Product::where('id', $id)->delete();
+        } else {
+            foreach ($availableCarts as $row) {
+                Cart::whereId($row->id)->delete();
+            }
+            Product::where('id', $id)->delete();
+
+        }
+
         return redirect()->action([ProductController::class, 'index']);
     }
 
@@ -124,7 +136,8 @@ class ProductController extends Controller
         return redirect()->action([ProductController::class, 'archiveProduct']);
     }
 
-    public function men(){
+    public function men()
+    {
         $user = Session::get('user');
         $setting = Setting::get();
         $men = Product::where('gender_id', 1)->get();
@@ -134,10 +147,10 @@ class ProductController extends Controller
         } else {
             return view('men', compact('user', 'men', 'setting'));
         }
-
     }
 
-    public function woman(){
+    public function woman()
+    {
         $user = Session::get('user');
         $setting = Setting::get();
         $woman = Product::where('gender_id', 2)->get();
@@ -148,8 +161,9 @@ class ProductController extends Controller
             return view('woman', compact('user', 'woman', 'setting'));
         }
     }
-    
-    public function kid(){
+
+    public function kid()
+    {
         $user = Session::get('user');
         $setting = Setting::get();
         $kid = Product::where('gender_id', 3)->get();
@@ -160,8 +174,9 @@ class ProductController extends Controller
             return view('kid', compact('user', 'kid', 'setting'));
         }
     }
-    
-    public function bag(){
+
+    public function bag()
+    {
         $user = Session::get('user');
         $setting = Setting::get();
         $bag = Product::where('gender_id', 4)->get();
@@ -173,7 +188,8 @@ class ProductController extends Controller
         }
     }
 
-    public function detail(Request $request, $id){
+    public function detail(Request $request, $id)
+    {
         $user = Session::get('user');
         $setting = Setting::get();
         $gender = Gender::get();
@@ -181,12 +197,11 @@ class ProductController extends Controller
         $product = Product::where('id', $id)->get();
 
         return view('Admin.detailProduct', compact('user', 'setting', 'product', 'gender', 'type'));
-
     }
     public function update(Request $request, $id)
     {
 
-         Product::where('id', $id)->update([
+        Product::where('id', $id)->update([
             'name_product' => $request->name_product,
             'description_product' => $request->description_product,
             'price_product' => $request->price_product,
@@ -203,16 +218,16 @@ class ProductController extends Controller
 
     public function imgUpdate(Request $request, $id)
     {
-        
+
         $image = $request->file('image_product');
         $move = "products";
-        
+
         Product::where('id', $id)->update([
             'image_product' => $image->getClientOriginalName()
         ]);
 
         $image->move($move, $image->getClientOriginalName());
-        
+
         return back();
     }
 }

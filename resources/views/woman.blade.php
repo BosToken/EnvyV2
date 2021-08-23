@@ -15,11 +15,17 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col">
-                <nav aria-label="breadcrumb">
+                {{-- <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ url('') }}">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page"><a href="{{ url('product/woman') }}">Woman</a>
                         </li>
+                    </ol>
+                </nav> --}}
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ url('') }}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="{{ url('product/woman') }}">Woman</a><li>
                     </ol>
                 </nav>
             </div>

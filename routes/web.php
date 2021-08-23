@@ -36,6 +36,7 @@ Route::get('register',[UserController::class, 'register']);
 Route::put('register/store',[UserController::class, 'store']);
 
 Route::get('profile',[UserController::class, 'profile']);
+Route::get('address',[AddressController::class, 'index']);
 Route::put('profile/username/update/{id}',[UserController::class, 'profileUsername']);
 Route::put('profile/phone/update/{id}',[UserController::class, 'profilePhone']);
 Route::put('profile/address/store/{id}',[AddressController::class, 'store']);
