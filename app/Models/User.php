@@ -14,6 +14,8 @@ class User extends Model
         'password',
         'phone',
         'role',
+        'bank_main_id',
+        'address_main_id'
     ];
 
     public function addresss () {
@@ -22,6 +24,18 @@ class User extends Model
 
     public function carts () {
         return $this->hasMany('App\Models\Cart');
+    }
+
+    public function bank_accounts () {
+        return $this->hasMany('App\Models\BankAccount');
+    }
+    
+    public function bankmain () {
+        return $this->belongsTo('App\Models\BankAccount', 'bank_main_id');
+    }
+
+    public function addressmain () {
+        return $this->belongsTo('App\Models\Address', 'address_main_id');
     }
 
 }

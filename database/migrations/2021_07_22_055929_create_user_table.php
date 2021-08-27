@@ -20,6 +20,8 @@ class CreateUserTable extends Migration
             $table->string('password');
             $table->string('phone')->nullable();
             $table->integer('role');
+            $table->integer('address_main_id')->nullable();
+            $table->integer('bank_main_id')->nullable();
 
             $table->timestamps();
         });

@@ -6,7 +6,9 @@ use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\BankController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,13 +37,21 @@ Route::get('logout', [UserController::class, 'logout']);
 Route::get('register',[UserController::class, 'register']);
 Route::put('register/store',[UserController::class, 'store']);
 
-Route::get('profile',[UserController::class, 'profile']);
-Route::get('address',[AddressController::class, 'index']);
+Route::get('profile/biodata',[UserController::class, 'profile']);
+Route::get('profile/address',[AddressController::class, 'index']);
 Route::put('profile/username/update/{id}',[UserController::class, 'profileUsername']);
 Route::put('profile/phone/update/{id}',[UserController::class, 'profilePhone']);
 Route::put('profile/address/store/{id}',[AddressController::class, 'store']);
 Route::put('profile/address/update/{id}',[AddressController::class, 'update']);
 Route::get('profile/address/destroy/{id}',[AddressController::class, 'destroy']);
+Route::get('profile/address/changeMain/{id}',[AddressController::class, 'changeMain']);
+Route::get('profile/address/changeMainNo/{id}',[AddressController::class, 'changeMainNo']);
+
+Route::get('profile/bank',[BankController::class, 'index']);
+Route::put('profile/bank/store',[BankController::class, 'store']);
+Route::get('profile/bank/destroy/{id}',[BankController::class, 'destroy']);
+Route::get('profile/bank/changeMain/{id}',[BankController::class, 'changeMain']);
+Route::get('profile/bank/changeMainBuy/{id}',[BankController::class, 'changeMainBuy']);
 
 Route::get('cart',[CartController::class, 'index']);
 Route::get('cart/store/{id}',[CartController::class, 'store']);
@@ -71,3 +81,5 @@ Route::put('admin/setting/titleUpdate/{id}', [SettingController::class, 'title']
 
 
 Route::get('back',[UserController::class, 'back']);
+
+Route::get('debug', function () {return Session::all();});

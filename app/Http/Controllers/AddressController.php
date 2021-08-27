@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Session;
 use App\Models\User;
 use App\Models\Address;
@@ -12,14 +13,15 @@ class AddressController extends Controller
     public function index()
     {
         $user = Session::get('user');
+        $main = User::find($user->id)->addressmain()->get();
         $address = User::find($user->id)->addresss()->get();
         $setting = Setting::get();
-        
+
         if ($user) {
             $quantity = User::find($user->id)->carts()->count();
-            return view('User.address', compact('user', 'address', 'setting', 'quantity'));
+            return view('User.address', compact('user', 'main', 'address', 'setting', 'quantity'));
         } else {
-            return view('User.address', compact('user', 'address', 'setting'));
+            return view('User.address', compact('user', 'main', 'address', 'setting'));
         }
     }
 
@@ -53,7 +55,6 @@ class AddressController extends Controller
         $data->city = $city;
         $data->address = $address;
         $data->post = $post;
-        $data->main = 'No';
         $data->save();
 
         return redirect()->action([AddressController::class, 'index']);
@@ -62,6 +63,17 @@ class AddressController extends Controller
     public function destroy($id)
     {
         Address::where('id', $id)->delete();
+        return redirect()->action([AddressController::class, 'index']);
+    }
+
+    public function changeMain(Request $request, $id)
+    {
+        $user = Session::get('user');
+        User::find($user->id)->update([
+            'address_main_id' => $id
+        ]);
+        $data = User::where('id', $user->id)->first();
+        $request->session()->put('user', $data);
         return redirect()->action([AddressController::class, 'index']);
     }
 }

@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Gender;
 use App\Models\Type;
 use App\Models\Setting;
+use App\Models\BankName;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Http\Request;
 
@@ -28,15 +29,18 @@ class ProductController extends Controller
     public function buy(Request $request, $id)
     {
         $user = Session::get('user');
+        $main = User::find($user->id)->bankmain()->get();
+        // $bank = BankName::get();
+        $bank = User::find($user->id)->bank_accounts()->get();
         $setting = Setting::get();
         $product = Product::where('id', $id)->get();
-        $address = User::find($user->id)->addresss()->where('main', 'Yes')->get();
+        $address = User::find($user->id)->addressmain()->get();
 
         if ($user) {
             $quantity = User::find($user->id)->carts()->count();
-            return view('User.buyRightAway', compact('user', 'product', 'setting', 'quantity', 'address'));
+            return view('User.buyRightAway', compact('user', 'product', 'bank', 'main', 'setting', 'quantity', 'address'));
         } else {
-            return view('User.buyRightAway', compact('user', 'product', 'setting', 'address'));
+            return view('User.buyRightAway', compact('user', 'product', 'bank', 'main', 'setting', 'address'));
         }
     }
 

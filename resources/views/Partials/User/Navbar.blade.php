@@ -91,7 +91,7 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
                                                 <hr>
                                             @else
                                             @endif
-                                            <li><a class="dropdown-item" href="{{ url('profile') }}">Profile</a></li>
+                                            <li><a class="dropdown-item" href="{{ url('profile/biodata') }}">Profile</a></li>
                                             <li><a class="dropdown-item" href="{{ url('logout') }}">Logout</a></li>
                                         </ul>
                                     </li>

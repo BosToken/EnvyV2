@@ -55,6 +55,7 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
                 </div>
                 <div class="col s6">
                     <ul>
+                        Contact
                         <br>
                         <a href="{{ url('mailto:' . $settings->email_app) }}" class="link-light" target="_blank">
                             <img src="{{ asset('assets/gmail.png') }}" width="27" height="27">

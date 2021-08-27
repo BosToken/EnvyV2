@@ -19,7 +19,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{ url('') }}">Home</a></li>
                                 <hr>
-                                <li><a class="dropdown-item" href="{{ url('profile') }}">Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ url('profile/biodata') }}">Profile</a></li>
                                 <li><a class="dropdown-item" href="{{ url('logout') }}">Logout</a></li>
                             </ul>
                         </li>
