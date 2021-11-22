@@ -72,8 +72,8 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
                     </ul>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <div class="container">
+            <div class="footer-copyright bg-dark">
+                <div class="container py-4 text-white">
                     <center>&copy;2021 Copyright {{$settings->title_app}}</center>
                 </div>
             </div>
