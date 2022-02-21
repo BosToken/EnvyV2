@@ -9,6 +9,8 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\BankController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Http;
+use phpDocumentor\Reflection\DocBlock\Tags\Var_;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,4 +84,12 @@ Route::put('admin/setting/titleUpdate/{id}', [SettingController::class, 'title']
 
 Route::get('back',[UserController::class, 'back']);
 
-Route::get('debug', function () {return Session::all();});
+Route::get('debug', function () {
+    // $request = new \GuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
+    $response = Http::get('https://data-wilayah-indonesia.herokuapp.com/province');
+    // return $response;
+    // echo $request;
+    // var_dump($response->getBody());
+    echo var_dump($response[0]["provinceId"]);
+    // count(array($response));
+});

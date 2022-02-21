@@ -7,11 +7,13 @@ use App\Models\User;
 use App\Models\Address;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AddressController extends Controller
 {
     public function index()
     {
+        $addressAPI = Http::get('https://data-wilayah-indonesia.herokuapp.com/province');
         $user = Session::get('user');
         $main = User::find($user->id)->addressmain()->get();
         $address = User::find($user->id)->addresss()->get();
@@ -19,9 +21,9 @@ class AddressController extends Controller
 
         if ($user) {
             $quantity = User::find($user->id)->carts()->count();
-            return view('User.address', compact('user', 'main', 'address', 'setting', 'quantity'));
+            return view('User.address', compact('user', 'main', 'address', 'setting', 'quantity', 'addressAPI'));
         } else {
-            return view('User.address', compact('user', 'main', 'address', 'setting'));
+            return view('User.address', compact('user', 'main', 'address', 'setting', 'addressAPI'));
         }
     }
 
