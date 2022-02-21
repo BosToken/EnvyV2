@@ -13,7 +13,7 @@ class AddressController extends Controller
 {
     public function index()
     {
-        $addressAPI = Http::get('https://data-wilayah-indonesia.herokuapp.com/province');
+        // $addressAPI = Http::get('https://data-wilayah-indonesia.herokuapp.com/province');
         $user = Session::get('user');
         $main = User::find($user->id)->addressmain()->get();
         $address = User::find($user->id)->addresss()->get();
