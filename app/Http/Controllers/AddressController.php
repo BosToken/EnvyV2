@@ -21,9 +21,9 @@ class AddressController extends Controller
 
         if ($user) {
             $quantity = User::find($user->id)->carts()->count();
-            return view('User.address', compact('user', 'main', 'address', 'setting', 'quantity', 'addressAPI'));
+            return view('User.address', compact('user', 'main', 'address', 'setting', 'quantity'));
         } else {
-            return view('User.address', compact('user', 'main', 'address', 'setting', 'addressAPI'));
+            return view('User.address', compact('user', 'main', 'address', 'setting'));
         }
     }
 
