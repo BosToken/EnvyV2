@@ -101,7 +101,7 @@ class UserController extends Controller
             $user->username = $username;
             $user->email = $email;
             $user->password = $password;
-            $user->role = "2";
+            $user->role = "1";
 
             $user->save();
 
