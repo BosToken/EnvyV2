@@ -84,12 +84,3 @@ Route::put('admin/setting/titleUpdate/{id}', [SettingController::class, 'title']
 
 Route::get('back',[UserController::class, 'back']);
 
-Route::get('debug', function () {
-    // $request = new \GuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
-    $response = Http::get('https://data-wilayah-indonesia.herokuapp.com/province');
-    // return $response;
-    // echo $request;
-    // var_dump($response->getBody());
-    echo var_dump($response[0]["provinceId"]);
-    // count(array($response));
-});
